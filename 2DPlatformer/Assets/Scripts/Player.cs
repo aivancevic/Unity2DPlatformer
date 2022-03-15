@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
     private Animator anim;
     private float horizontalInput = 0.0f;
     [SerializeField] private float speed = 4.0f;
-
     [SerializeField] private float jumpForce = 2.0f;
     private bool isGrounded = false;
     [SerializeField] private Transform isGroundedChecker;
@@ -75,6 +74,14 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag.Equals("Ground"))
         {
             isGrounded = false;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag.Equals("Ground"))
+        {
+            Destroy(other.gameObject);
         }
     }
 

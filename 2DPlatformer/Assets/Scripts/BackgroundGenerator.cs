@@ -1,0 +1,56 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BackgroundGenerator : MonoBehaviour
+{
+    private GameObject player = null;
+    [SerializeField] private GameObject[] backgroundPrefab;
+    private Vector3 nextPositionToSpawnBackground = new Vector3(0, 30, 0);
+    private bool canChangeBackground = true;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player == null)
+        {
+            Debug.Log("Script: BackgroundGenerator.cs - player is null");
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        BackgroundSpawner();
+    }
+
+    private void BackgroundSpawner()
+    {
+        CanChangeBackground();
+        if (canChangeBackground && (Mathf.RoundToInt(player.transform.position.y) >= 15) && (Mathf.RoundToInt(player.transform.position.y) % 10 == 5))
+        {
+            canChangeBackground = false;
+            backgroundPrefab[0].transform.position = nextPositionToSpawnBackground;
+            nextPositionToSpawnBackground += new Vector3(0, 10, 0);
+            ChangeBackgroundOrder(backgroundPrefab);
+        }
+    }
+
+    private void ChangeBackgroundOrder(GameObject[] backgroundPrefab)
+    {
+        GameObject temp;
+
+        temp = backgroundPrefab[0];
+        backgroundPrefab[0] = backgroundPrefab[1];
+        backgroundPrefab[1] = backgroundPrefab[2];
+        backgroundPrefab[2] = temp;
+    }
+
+    private void CanChangeBackground()
+    {
+        if ((Mathf.RoundToInt(player.transform.position.y) >= 15) && (Mathf.RoundToInt(player.transform.position.y) % 10 == 0))
+            canChangeBackground = true;
+    }
+}
