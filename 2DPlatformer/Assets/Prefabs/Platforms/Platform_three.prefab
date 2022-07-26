@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &157369763919102831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5581598166452999641}
+  m_Layer: 0
+  m_Name: DiamondSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5581598166452999641
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157369763919102831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1003708771268214017}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003708771222618969
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +59,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1003708771268214017}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1003708771222618971
 SpriteRenderer:
@@ -93,6 +123,7 @@ GameObject:
   - component: {fileID: 1003708771268214017}
   - component: {fileID: 1003708771268214142}
   - component: {fileID: 1003708771268214143}
+  - component: {fileID: -4168300367300558072}
   m_Layer: 8
   m_Name: Platform_three
   m_TagString: Ground
@@ -111,6 +142,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 5581598166452999641}
   - {fileID: 1003708771819595367}
   - {fileID: 1003708771553810530}
   - {fileID: 1003708771222618968}
@@ -158,6 +190,29 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &-4168300367300558072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003708771268214140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcec437dbf3b95747985967f4d1fe045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamonds:
+  - {fileID: 3052663554181992081, guid: 6d80dc94544c04e47b242854b55f7fb9, type: 3}
+  - {fileID: 3052663554181992081, guid: 6d80dc94544c04e47b242854b55f7fb9, type: 3}
+  - {fileID: 4162683702161557005, guid: db5880e70e299dc45be230a7dfdbd8d0, type: 3}
+  - {fileID: 2590042107547720450, guid: 41a01c0f39dac564fa81df9e16bf2903, type: 3}
+  - {fileID: 3969524389655180105, guid: a19ea622ff904934690cdb98050fc0bf, type: 3}
+  - {fileID: 3052663554181992081, guid: 6d80dc94544c04e47b242854b55f7fb9, type: 3}
+  - {fileID: 2590042107547720450, guid: 41a01c0f39dac564fa81df9e16bf2903, type: 3}
+  - {fileID: 9017164215765179812, guid: d4aad602d86885648a48beb0b9e0ed30, type: 3}
+  - {fileID: 3969524389655180105, guid: a19ea622ff904934690cdb98050fc0bf, type: 3}
+  - {fileID: 3969524389655180105, guid: a19ea622ff904934690cdb98050fc0bf, type: 3}
 --- !u!1 &1003708771553810531
 GameObject:
   m_ObjectHideFlags: 0
@@ -187,7 +242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1003708771268214017}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1003708771553810533
 SpriteRenderer:
@@ -269,7 +324,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1003708771268214017}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1003708771819595366
 SpriteRenderer:

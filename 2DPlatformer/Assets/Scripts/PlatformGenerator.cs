@@ -67,7 +67,7 @@ public class PlatformGenerator : MonoBehaviour
 
     private void SpawnPlatforms()
     {
-        if ((player.transform.position.y - referencePositionToSpawnNextPlatform.y) > 2)
+        if ((player.transform.position.y - referencePositionToSpawnNextPlatform.y) > 1)
         {
             referencePositionToSpawnNextPlatform = player.transform.position;
             InstantiatePlatofrmAtSpawnPosition();

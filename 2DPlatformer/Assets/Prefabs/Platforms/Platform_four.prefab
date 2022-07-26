@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5825568091828139159}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6707000043486714879
 SpriteRenderer:
@@ -111,7 +111,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5825568091828139159}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3132431051095741875
 SpriteRenderer:
@@ -193,7 +193,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5825568091828139159}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3325381778820236181
 SpriteRenderer:
@@ -257,6 +257,7 @@ GameObject:
   - component: {fileID: 5825568091828139159}
   - component: {fileID: 683711792371341834}
   - component: {fileID: 2728158177624667592}
+  - component: {fileID: 2912955880238374916}
   m_Layer: 8
   m_Name: Platform_four
   m_TagString: Ground
@@ -275,6 +276,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 3782805718572172628}
   - {fileID: 4283111394975285965}
   - {fileID: 2133201797105021750}
   - {fileID: 7770828239850219222}
@@ -323,6 +325,29 @@ PlatformEffector2D:
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 1
+--- !u!114 &2912955880238374916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6599281592813360313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcec437dbf3b95747985967f4d1fe045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamonds:
+  - {fileID: 3052663554181992081, guid: 6d80dc94544c04e47b242854b55f7fb9, type: 3}
+  - {fileID: 3052663554181992081, guid: 6d80dc94544c04e47b242854b55f7fb9, type: 3}
+  - {fileID: 4162683702161557005, guid: db5880e70e299dc45be230a7dfdbd8d0, type: 3}
+  - {fileID: 2590042107547720450, guid: 41a01c0f39dac564fa81df9e16bf2903, type: 3}
+  - {fileID: 3969524389655180105, guid: a19ea622ff904934690cdb98050fc0bf, type: 3}
+  - {fileID: 3052663554181992081, guid: 6d80dc94544c04e47b242854b55f7fb9, type: 3}
+  - {fileID: 2590042107547720450, guid: 41a01c0f39dac564fa81df9e16bf2903, type: 3}
+  - {fileID: 9017164215765179812, guid: d4aad602d86885648a48beb0b9e0ed30, type: 3}
+  - {fileID: 3969524389655180105, guid: a19ea622ff904934690cdb98050fc0bf, type: 3}
+  - {fileID: 3969524389655180105, guid: a19ea622ff904934690cdb98050fc0bf, type: 3}
 --- !u!1 &7917746545389728659
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5825568091828139159}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1173262847075886758
 SpriteRenderer:
@@ -405,3 +430,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &8679850738447064035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3782805718572172628}
+  m_Layer: 0
+  m_Name: DiamondSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3782805718572172628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8679850738447064035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.75, y: 0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5825568091828139159}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
