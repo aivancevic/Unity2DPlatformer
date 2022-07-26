@@ -29,7 +29,7 @@ public class BackgroundGenerator : MonoBehaviour
     private void BackgroundSpawner()
     {
         CanChangeBackground();
-        if (canChangeBackground && (Mathf.RoundToInt(player.transform.position.y) >= 15) && (Mathf.RoundToInt(player.transform.position.y) % 10 == 5))
+        if (player != null && canChangeBackground && (Mathf.RoundToInt(player.transform.position.y) >= 15) && (Mathf.RoundToInt(player.transform.position.y) % 10 == 5))
         {
             canChangeBackground = false;
             backgroundPrefab[0].transform.position = nextPositionToSpawnBackground;
@@ -50,7 +50,7 @@ public class BackgroundGenerator : MonoBehaviour
 
     private void CanChangeBackground()
     {
-        if ((Mathf.RoundToInt(player.transform.position.y) >= 15) && (Mathf.RoundToInt(player.transform.position.y) % 10 == 0))
+        if (player != null && (Mathf.RoundToInt(player.transform.position.y) >= 15) && (Mathf.RoundToInt(player.transform.position.y) % 10 == 0))
             canChangeBackground = true;
     }
 }

@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
     }
 
     #region Functions
+
     private void Move()
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
