@@ -11,6 +11,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float jumpForce = 2.0f;
     private bool isGrounded = false;
     [SerializeField] private Transform isGroundedChecker;
+    private Transform myTransform;  //optimization
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,12 @@ public class Player : MonoBehaviour
         if (anim == null)
         {
             Debug.LogError("Script: Player\t Animator is NULL");
+        }
+
+        myTransform = GetComponent<Transform>();
+        if (myTransform == null)
+        {
+            Debug.LogError("Script: Player\t Transform is NULL");
         }
     }
 
@@ -42,11 +49,11 @@ public class Player : MonoBehaviour
 
         if (horizontalInput > 0)
         {
-            transform.eulerAngles = new Vector3(0, 0, 0);
+            myTransform.eulerAngles = new Vector3(0, 0, 0);
         }
         else
         {
-            transform.eulerAngles = new Vector3(0, 180, 0);
+            myTransform.eulerAngles = new Vector3(0, 180, 0);
         }
 
         anim.SetFloat("Speed", Mathf.Abs(horizontalInput));

@@ -20,8 +20,9 @@ public class GameOver : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                print("Application Quit");
-                Application.Quit();
+                print("Return to main menu");
+                SceneManager.LoadScene(0);
+                Cursor.visible = true;
             }
         }
     }

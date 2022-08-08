@@ -13,11 +13,13 @@ public class PlatformGenerator : MonoBehaviour
     private Transform platformHolder = null;
     private GameObject player = null;
     private Vector3 referencePositionToSpawnNextPlatform = new Vector3(0, 0, 0);
+    private Transform thisGameObjectTransform;  //optimization
 
 
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
         GetOtherComponents();
         GetStartingPlatforms();
     }
@@ -45,6 +47,12 @@ public class PlatformGenerator : MonoBehaviour
         {
             Debug.LogError("Script: PlatformGenerator.cs - player is null");
         }
+
+        thisGameObjectTransform = GetComponent<Transform>();
+        if (thisGameObjectTransform == null)
+        {
+            Debug.LogError("Script: PlatformGenerator.cs -> thisGameObjectTransform is null");
+        }
     }
 
     private void GetStartingPlatforms()
@@ -60,9 +68,9 @@ public class PlatformGenerator : MonoBehaviour
         spawnPosition.y += Random.Range(minY, maxY);
         spawnPosition.x = Random.Range(-levelWidth, levelWidth);
 
-        this.transform.position = spawnPosition;
+        thisGameObjectTransform.position = spawnPosition;
 
-        Instantiate(platformPrefab[Random.Range(0, platformPrefab.Length)], this.transform.position, Quaternion.identity, platformHolder);
+        Instantiate(platformPrefab[Random.Range(0, platformPrefab.Length)], thisGameObjectTransform.position, Quaternion.identity, platformHolder);
     }
 
     private void SpawnPlatforms()

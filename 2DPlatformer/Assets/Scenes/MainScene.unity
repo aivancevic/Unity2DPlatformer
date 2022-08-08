@@ -1195,7 +1195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press R to restart / Press Q to quit
+  m_Text: Press R to restart / Press Q to Main Menu
 --- !u!222 &1412401852
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1758,7 +1758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3100001343686996212, guid: 0705e76603239604c8abc770118a435e, type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 3100001343686996212, guid: 0705e76603239604c8abc770118a435e, type: 3}
       propertyPath: m_TagString
