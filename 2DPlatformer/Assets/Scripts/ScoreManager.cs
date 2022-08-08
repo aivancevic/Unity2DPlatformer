@@ -6,17 +6,28 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private Text score;
-    private int scoreSum = 0;
+    [SerializeField] private Text highScore;
+    private int scoreCount = 0;
     public static ScoreManager instance;
-
     private void Awake()
     {
         instance = this;
+        highScore.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
     }
 
     public void AddScore(int points)
     {
-        scoreSum += points;
-        score.text = scoreSum.ToString();
+        scoreCount += points;
+        score.text = scoreCount.ToString();
+        AddHighScore();
+    }
+
+    public void AddHighScore()
+    {
+        if (scoreCount > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", scoreCount);
+            highScore.text = scoreCount.ToString();
+        }
     }
 }
