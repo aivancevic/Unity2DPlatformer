@@ -16,6 +16,7 @@ public class GameOver : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                Time.timeScale = 1f;
             }
 
             if (Input.GetKeyDown(KeyCode.Q))
@@ -23,6 +24,7 @@ public class GameOver : MonoBehaviour
                 print("Return to main menu");
                 SceneManager.LoadScene(0);
                 Cursor.visible = true;
+                Time.timeScale = 1f;
             }
         }
     }
@@ -35,6 +37,7 @@ public class GameOver : MonoBehaviour
             Destroy(other.gameObject);
             gameOverText.gameObject.SetActive(true);
             restartQuitText.gameObject.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }

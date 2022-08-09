@@ -45,7 +45,8 @@ public class BackgroundGenerator : MonoBehaviour
         temp = backgroundPrefab[0];
         backgroundPrefab[0] = backgroundPrefab[1];
         backgroundPrefab[1] = backgroundPrefab[2];
-        backgroundPrefab[2] = temp;
+        backgroundPrefab[2] = backgroundPrefab[3];
+        backgroundPrefab[3] = temp;
     }
 
     private void CanChangeBackground()
