@@ -35,7 +35,6 @@ public class CameraMovement : MonoBehaviour
         {
             transform.Translate(Vector3.up * Time.deltaTime * (increasePerSecond * secondsElapsed + speedStart));
             secondsElapsed += Time.deltaTime / 3;
-            Debug.Log("Speed start = " + speedStart);
         }
     }
 }

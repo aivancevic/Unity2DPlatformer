@@ -7,8 +7,12 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private float horizontalInput = 0.0f;
+
     [SerializeField] private float speed = 4.0f;
     [SerializeField] private float jumpForce = 2.0f;
+    [SerializeField] private KeyCode jump;
+    [SerializeField] private KeyCode left;
+    [SerializeField] private KeyCode right;
     private bool isGrounded = false;
     [SerializeField] private Transform isGroundedChecker;
     private Transform myTransform;  //optimization
@@ -34,7 +38,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+
     private void Update()
     {
         Move();
@@ -45,7 +49,9 @@ public class Player : MonoBehaviour
 
     private void Move()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKey(right)) horizontalInput = 1;
+        else if (Input.GetKey(left)) horizontalInput = -1;
+        else horizontalInput = 0;
 
         if (horizontalInput > 0)
         {
@@ -63,7 +69,7 @@ public class Player : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        if (Input.GetKeyDown(jump) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }

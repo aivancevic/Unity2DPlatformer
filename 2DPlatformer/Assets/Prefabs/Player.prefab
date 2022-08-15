@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 884789524}
   m_Layer: 6
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +148,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 9
   jumpForce: 15
+  jump: 0
+  left: 0
+  right: 0
   isGroundedChecker: {fileID: 3100001345052961930}
 --- !u!95 &884789524
 Animator:

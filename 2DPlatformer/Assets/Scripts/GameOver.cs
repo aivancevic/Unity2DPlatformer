@@ -21,7 +21,7 @@ public class GameOver : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                print("Return to main menu");
+                //DontDestroyOnLoad(audioManager);
                 SceneManager.LoadScene(0);
                 Cursor.visible = true;
                 Time.timeScale = 1f;
@@ -32,8 +32,8 @@ public class GameOver : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            AudioManager.PlaySound("Death");
-            AudioManager.PlaySound("Game Over");
+            //AudioManager.PlaySound("Death");
+            //AudioManager.PlaySound("Game Over");
             Destroy(other.gameObject);
             gameOverText.gameObject.SetActive(true);
             restartQuitText.gameObject.SetActive(true);

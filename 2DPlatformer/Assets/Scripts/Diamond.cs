@@ -11,7 +11,7 @@ public class Diamond : MonoBehaviour
 
         if (other.gameObject.tag.Equals("Player"))
         {
-            AudioManager.PlaySound("Diamond Collect");
+            //AudioManager.PlaySound("Diamond Collect");
             UIManager.instance.AddScore(numOfPoints);
             Destroy(this.gameObject);
         }
